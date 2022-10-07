@@ -3,8 +3,8 @@ using System.Threading.Tasks;
 
 namespace api.Repositories.WorkerRepository
 {
-    public interface IWorker
+    public interface IWorker : IRepository<Worker>
     {
-        Task<Worker> GetBySnils(string Snils);
+        Task<Worker> GetBySnils(string snils);
     }
 }

@@ -10,9 +10,9 @@ namespace api.Controllers
     public class CompanyController : Controller
     {
         private readonly IRepository<Company> companyRepo;
-        public CompanyController(IRepository<Company> CompanyRepo)
+        public CompanyController(IRepository<Company> companyRepo)
         {
-            companyRepo = CompanyRepo;
+            this.companyRepo = companyRepo;
         }
 
         [HttpGet("Get")]

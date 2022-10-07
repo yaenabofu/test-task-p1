@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace api.Repositories.WorkerRepository
 {
-    public class WorkerRepository : IRepository<Worker>, IWorker
+    public class WorkerRepository : IWorker
     {
         private readonly DatabaseContext _databaseContext;
         public WorkerRepository(DatabaseContext databaseContext)
@@ -45,9 +45,9 @@ namespace api.Repositories.WorkerRepository
             return await _databaseContext.Workers.FindAsync(id);
         }
 
-        public async Task<Worker> GetBySnils(string Snils)
+        public async Task<Worker> GetBySnils(string snils)
         {
-            return await _databaseContext.Workers.FirstOrDefaultAsync(c => c.Snils == Snils);
+            return await _databaseContext.Workers.FirstOrDefaultAsync(c => c.Snils == snils);
         }
 
         public async Task<Worker> Update(Worker оbj)
