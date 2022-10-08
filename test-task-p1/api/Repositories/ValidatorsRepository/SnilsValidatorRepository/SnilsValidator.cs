@@ -8,7 +8,7 @@
             int sum = 0;
             int final_num = 0;
 
-            if (!decimal.TryParse(snils, out _) || snils.Length != SNILS_LENGTH)
+            if (!long.TryParse(snils, out _) || snils.Length != SNILS_LENGTH)
             {
                 return false;
             }
