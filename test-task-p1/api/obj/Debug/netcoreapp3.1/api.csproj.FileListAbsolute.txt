@@ -60,3 +60,8 @@ D:\test-task-p1\test-task-p1\api\obj\Debug\netcoreapp3.1\api.csproj.CopyComplete
 D:\test-task-p1\test-task-p1\api\obj\Debug\netcoreapp3.1\api.dll
 D:\test-task-p1\test-task-p1\api\obj\Debug\netcoreapp3.1\api.pdb
 D:\test-task-p1\test-task-p1\api\obj\Debug\netcoreapp3.1\api.genruntimeconfig.cache
+D:\test-task-p1\test-task-p1\api\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+D:\test-task-p1\test-task-p1\api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+D:\test-task-p1\test-task-p1\api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\test-task-p1\test-task-p1\api\obj\Debug\netcoreapp3.1\api.MvcApplicationPartsAssemblyInfo.cs
+D:\test-task-p1\test-task-p1\api\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
