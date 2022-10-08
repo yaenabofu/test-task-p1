@@ -38,6 +38,18 @@ namespace api.Controllers
 
             return NotFound();
         }
+        [HttpGet("GetBySnils/{snils}")]
+        public async Task<IActionResult> GetBySnils(string snils)
+        {
+            var workers = await workerRepo.GetBySnils(snils);
+
+            if (workers != null)
+            {
+                return Ok(workers);
+            }
+
+            return NotFound();
+        }
         [HttpPost("Create")]
         public async Task<IActionResult> Create([FromBody] Worker worker)
         {
