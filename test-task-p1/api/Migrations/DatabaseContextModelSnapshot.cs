@@ -35,6 +35,20 @@ namespace api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Companies");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "First company",
+                            Name = "Company1"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Second company",
+                            Name = "Company2"
+                        });
                 });
 
             modelBuilder.Entity("api.Models.DatabaseObjects.Worker", b =>
@@ -64,7 +78,47 @@ namespace api.Migrations
 
                     b.HasKey("Id");
 
+                    b.HasIndex("CompanyId");
+
                     b.ToTable("Workers");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Birthday = new DateTime(2022, 10, 8, 11, 0, 38, 471, DateTimeKind.Local).AddTicks(7756),
+                            CompanyId = 1,
+                            Name = "Worker1",
+                            Snils = "snils",
+                            Surname = "firstWorker",
+                            ThirdName = "firstWorker"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Birthday = new DateTime(2022, 10, 8, 11, 0, 38, 472, DateTimeKind.Local).AddTicks(8910),
+                            CompanyId = 2,
+                            Name = "Worker2",
+                            Snils = "snils",
+                            Surname = "secondWorker",
+                            ThirdName = "secondWorker"
+                        });
+                });
+
+            modelBuilder.Entity("api.Models.DatabaseObjects.Worker", b =>
+                {
+                    b.HasOne("api.Models.DatabaseObjects.Company", "Company")
+                        .WithMany("Workers")
+                        .HasForeignKey("CompanyId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Company");
+                });
+
+            modelBuilder.Entity("api.Models.DatabaseObjects.Company", b =>
+                {
+                    b.Navigation("Workers");
                 });
 #pragma warning restore 612, 618
         }

@@ -42,7 +42,7 @@ namespace api.Repositories.WorkerRepository
 
         public async Task<Worker> Get(int id)
         {
-            return await _databaseContext.Workers.FindAsync(id);
+            return await _databaseContext.Workers.FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public async Task<Worker> GetBySnils(string snils)

@@ -53,7 +53,7 @@ namespace api.Controllers
         {
             if (await companyRepo.Delete(id))
             {
-                return Ok(id);
+                return Ok();
             }
 
             return BadRequest();

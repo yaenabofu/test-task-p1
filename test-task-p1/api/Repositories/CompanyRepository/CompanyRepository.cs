@@ -37,12 +37,12 @@ namespace api.Repositories.CompanyRepository
 
         public async Task<IEnumerable<Company>> Get()
         {
-            return await _databaseContext.Companies.ToListAsync();
+            return await _databaseContext.Companies.Include(c => c.Workers).ToListAsync();
         }
 
         public async Task<Company> Get(int id)
         {
-            return await _databaseContext.Companies.FindAsync(id);
+            return await _databaseContext.Companies.Include(c => c.Workers).FirstOrDefaultAsync(c => c.Id == id);
         }
 
         public async Task<Company> Update(Company оbj)

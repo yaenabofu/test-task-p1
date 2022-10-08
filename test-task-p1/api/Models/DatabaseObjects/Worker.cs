@@ -11,5 +11,6 @@ namespace api.Models.DatabaseObjects
         public DateTime Birthday { get; set; }
         public string Snils { get; set; }
         public int CompanyId { get; set; }
+        public Company Company { get; set; }
     }
 }

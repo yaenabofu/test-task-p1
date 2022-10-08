@@ -69,7 +69,7 @@ namespace api.Controllers
         {
             if (await workerRepo.Delete(id))
             {
-                return Ok(id);
+                return Ok();
             }
 
             return BadRequest();

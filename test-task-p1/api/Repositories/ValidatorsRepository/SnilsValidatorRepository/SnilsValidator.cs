@@ -8,7 +8,7 @@
             int sum = 0;
             int final_num = 0;
 
-            if (!int.TryParse(snils, out _) || snils.Length != SNILS_LENGTH)
+            if (!decimal.TryParse(snils, out _) || snils.Length != SNILS_LENGTH)
             {
                 return false;
             }
@@ -16,8 +16,9 @@
             for (int i = 0; i < snils.Length - 2; i++)
             {
                 int digit = int.Parse(snils[i].ToString());
+                int coefficient = snils.Length - 2 - i;
 
-                sum += digit * snils.Length - 2 - i;
+                sum += digit * coefficient;
             }
 
             if (sum < 100)
